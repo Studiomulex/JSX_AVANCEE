@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 export default function Card({ label, title}) {
-  const CardLabel=styled.span``
+  const CardLabel=styled.span`
+      color: #5843e4;
+      font-size:22px;
+      font-weight:bold;
+  `
   return (
     <div className="flex flex-col p-6">
       <CardLabel>{label}</CardLabel>
