@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-
 export default function Card({ label, title}) {
   return (
     <div className="flex flex-col p-6">
@@ -11,7 +10,7 @@ export default function Card({ label, title}) {
 }
 
 Card.propTypes = {
-  label: PropTypes.string,
-  title: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 //   picture: PropTypes.string,
 };

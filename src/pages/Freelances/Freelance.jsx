@@ -26,7 +26,7 @@ export default function Freelances() {
         <Card
           key={`${profile.name}-${index}`}
           label={profile.jobTitle}
-        //   picture={profile.picture}
+          //   picture={profile.picture}
           title={profile.name}
         />
       ))}
