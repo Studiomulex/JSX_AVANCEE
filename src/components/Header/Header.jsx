@@ -14,12 +14,12 @@ const StyledLink = styled(Link)`
 export default function Header() {
   return (
     <div className="flex flex-row bg-white items-center justify-between h-[10dvh]">
-      <img src={logo} alt="" className="w-[100px] h-[40px]" />
-      <nav>
+      <img src={logo} alt="" className="w-[100px] h-[40px] translate-x-12" />
+      <nav className="-translate-x-14">
         <StyledLink to="/">Accueil</StyledLink>
         <StyledLink to="/Freelances">Profils</StyledLink>
         <StyledLink to="/Survey/1" isFullLink>
-          Faire le test
+          Faire le test 
         </StyledLink>
       </nav>
     </div>
