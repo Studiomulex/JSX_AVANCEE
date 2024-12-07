@@ -1,21 +1,22 @@
 // import DefaultPicture from "../../assets/profile.png";
 import Card from "../../components/Card/Card";
 import styled from "styled-components";
+import profileImage from "../../assets/profile.png"
 const freelanceProfiles = [
   {
     name: "Jane Doe",
     jobTitle: "Devops",
-    // picture: DefaultPicture,
+    picture:profileImage,
   },
   {
     name: "John Doe",
     jobTitle: "Developpeur frontend",
-    // picture: DefaultPicture,
+    picture:profileImage,
   },
   {
     name: "Jeanne Biche",
     jobTitle: "Développeuse Fullstack",
-    // picture: DefaultPicture,
+    picture:profileImage,
   },
 ];
 
@@ -35,7 +36,7 @@ export default function Freelances() {
         <Card
           key={`${profile.name}-${index}`}
           label={profile.jobTitle}
-          //   picture={profile.picture}
+          picture={profile.picture}
           title={profile.name}
         />
       ))}

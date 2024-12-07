@@ -20,11 +20,11 @@ const CardLabel = styled.span`
   font-size: 22px;
   font-weight: bold;
 `;
-export default function Card({ label, title }) {
+export default function Card({ label, title,picture }) {
   return (
     <CardWrapper>
       <CardLabel>{label}</CardLabel>
-      {/* <img src={picture} alt="Freelance" className="w-[80px] h-[80px]" /> */}
+      <img src={picture} alt="Freelance" className="w-[80px] h-[80px]" />
       <span>{title}</span>
     </CardWrapper>
   );
@@ -33,5 +33,5 @@ export default function Card({ label, title }) {
 Card.propTypes = {
   label: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  //   picture: PropTypes.string,
+  picture: PropTypes.string,
 };
