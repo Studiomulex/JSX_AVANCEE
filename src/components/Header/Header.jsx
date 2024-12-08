@@ -3,7 +3,9 @@ import styled from "styled-components";
 import colors from "../../utils/style/Color";
 import logo from "../../assets/dark-logo.png";
 const StyledLink = styled(Link)`
-  color: #8186a0;
+  color: black;
+  font-weight: 500;
+  font-family: serif;
   padding: 15px;
   text-decoration: none;
   font-size: 18px;
