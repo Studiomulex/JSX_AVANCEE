@@ -5,5 +5,5 @@ box-sizing: border-box;
 scroll-behavior: smooth;
 }
 body{
-  background-color:rgb(220, 200, 162);
+  min-height: 100dvh;
 }

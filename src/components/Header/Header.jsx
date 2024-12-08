@@ -9,7 +9,7 @@ const StyledLink = styled(Link)`
   font-size: 18px;
   ${(props) =>
     props.isFullLink &&
-    `color: white; border-radius: 30px; background-color:${colors.primary}`}
+    `color: white;background-color:${colors.primary};padding:10px 10px`}
 `;
 export default function Header() {
   return (
@@ -19,7 +19,7 @@ export default function Header() {
         <StyledLink to="/">Accueil</StyledLink>
         <StyledLink to="/Freelances">Profils</StyledLink>
         <StyledLink to="/Survey/1" isFullLink>
-          Faire le test 
+          Faire le test
         </StyledLink>
       </nav>
     </div>
