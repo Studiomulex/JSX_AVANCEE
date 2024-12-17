@@ -18,7 +18,7 @@ export default function Header() {
       <nav className="-translate-x-14">
         <StyledLink to="/">Accueil</StyledLink>
         <StyledLink to="/Freelances">Profils</StyledLink>
-        <StyledLink to="/Survey/1" className="bg-blue-600 rounded-2xl">
+        <StyledLink to="/Survey/1" className="bg-blue-600 rounded-2xl hover:text-teal-100">
           Faire le test
         </StyledLink>
       </nav>
