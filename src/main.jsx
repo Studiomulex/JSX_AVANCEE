@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/home/Home.jsx";
+import Home from "./pages/Home/Home.jsx";
 import Survey from "./pages/Survey/Survey.jsx";
 import Header from "./components/Header/Header.jsx";
 import Results from "./pages/Results/Result.jsx";
