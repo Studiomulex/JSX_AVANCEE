@@ -34,7 +34,7 @@ const LoaderWrapper = styled.div`
 
 function Freelances() {
   const [isDataLoading, setDataLoading] = useState(false)
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(null)
   const [freelancersList, setFreelancesList] = useState([])
 
   useEffect(() => {
@@ -42,11 +42,14 @@ function Freelances() {
       setDataLoading(true)
       try {
         const response = await fetch(`http://localhost:8000/freelances`)
-        const { freelancersList } = await response.json()
-        setFreelancesList(freelancersList)
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const data = await response.json()
+        setFreelancesList(data.freelancersList)
       } catch (err) {
         console.log('===== error =====', err)
-        setError(true)
+        setError(err.message)
       } finally {
         setDataLoading(false)
       }
@@ -55,7 +58,7 @@ function Freelances() {
   }, [])
 
   if (error) {
-    return <span>Oups il y a eu un problème</span>
+    return <span>Oups il y a eu un problème: {error}</span>
   }
 
   return (
@@ -84,4 +87,4 @@ function Freelances() {
   )
 }
 
-export default Freelances
+export default Freelances 
