@@ -1,10 +1,10 @@
 import {createContext } from 'react';
 import PropTypes from 'prop-types';
 export const ThemeContext = createContext({});
-export const ThemeProvider=({Children})=>{
+export const ThemeProvider=({children})=>{
     return(
         <ThemeContext.Provider value={{}}>
-            {Children}
+            {children}
         </ThemeContext.Provider>
     );
 }
