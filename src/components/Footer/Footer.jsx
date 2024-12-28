@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import colors from '../../utils/style/color'
- 
+import colors from '../../utils/style/color' 
 const FooterContainer = styled.footer`
     display: flex;
     flex-direction: row;
