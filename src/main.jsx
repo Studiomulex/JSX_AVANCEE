@@ -8,6 +8,7 @@ import Header from "./components/Header/Header.jsx";
 import Results from "./pages/Results/Result.jsx";
 import Freelances from "./pages/Freelances/Freelance.jsx";
 import Error from "./components/Error/Error.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
@@ -19,6 +20,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/Freelances" element={<Freelances />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
+      <Footer />
     </Router>
   </StrictMode>
 );
