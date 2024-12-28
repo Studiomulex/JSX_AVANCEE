@@ -9,9 +9,11 @@ import Results from "./pages/Results/Result.jsx";
 import Freelances from "./pages/Freelances/Freelance.jsx";
 import Error from "./components/Error/Error.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import { ThemeProvider } from "./utils/Context/index.js";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
+      <ThemeProvider>
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -21,6 +23,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer />
+     </ThemeProvider>
     </Router>
   </StrictMode>
 );
