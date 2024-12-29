@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import homeIllustration from "../../assets/home-illustration.svg";
 import "../../App.css";
+import Footer from "../../components/Footer/Footer";
 export default function Home() {
   return (
     <div className="h-[90dvh] flex justify-center items-center">
@@ -22,6 +23,7 @@ export default function Home() {
           />
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

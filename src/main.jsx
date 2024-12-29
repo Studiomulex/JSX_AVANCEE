@@ -8,22 +8,21 @@ import Header from "./components/Header/Header.jsx";
 import Results from "./pages/Results/Result.jsx";
 import Freelances from "./pages/Freelances/Freelance.jsx";
 import Error from "./components/Error/Error.jsx";
-import Footer from "./components/Footer/Footer.jsx";
-import { ThemeProvider } from "./utils/Context/index.js";
+import { ThemeProvider } from "./utils/Context/index.jsx";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Router>
       <ThemeProvider>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/Survey/:questionNumber" element={<Survey />}></Route>
-        <Route path="/Result" element={<Results />}></Route>
-        <Route path="/Freelances" element={<Freelances />}></Route>
-        <Route path="*" element={<Error />}></Route>
-      </Routes>
-      <Footer />
-     </ThemeProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Survey/:questionNumber" element={<Survey />} />
+          <Route path="/Result" element={<Results />} />
+          <Route path="/Freelances" element={<Freelances />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </ThemeProvider>
     </Router>
   </StrictMode>
 );

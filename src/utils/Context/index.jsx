@@ -1,20 +1,21 @@
 import { createContext, useState } from "react";
 import PropTypes from "prop-types";
-import Footer from "../../components/Footer";
+
 const ThemeContext = createContext();
 
-export const ThemeProvider = () => {
-const [theme,setTheme]=useState('light');
-const toggleTheme=()=>{
-  setTheme((prevTheme)=>prevTheme === 'light' ? 'dark' : 'light');
-}
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-     <Footer/>
+      {children}
     </ThemeContext.Provider>
   );
 };
 
 ThemeProvider.propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
+
+export { ThemeContext };
