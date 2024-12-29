@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { ThemeContext } from '../../utils/Context'
 import styled from 'styled-components'
-import colors from '../../utils/style/colors'
+import colors from '../../utils/style/color'
 
 const FooterContainer = styled.footer`
   display: flex;
