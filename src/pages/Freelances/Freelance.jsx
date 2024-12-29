@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Card from '../../components/Card/Card'
+import Card from '../../components/Card'
 import styled from 'styled-components'
 import colors from '../../utils/style/color'
 import { Loader } from '../../utils/style/Atoms'
@@ -34,7 +34,7 @@ const LoaderWrapper = styled.div`
 
 function Freelances() {
   const [isDataLoading, setDataLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(false)
   const [freelancersList, setFreelancesList] = useState([])
 
   useEffect(() => {
@@ -42,14 +42,11 @@ function Freelances() {
       setDataLoading(true)
       try {
         const response = await fetch(`http://localhost:8000/freelances`)
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        const data = await response.json()
-        setFreelancesList(data.freelancersList)
+        const { freelancersList } = await response.json()
+        setFreelancesList(freelancersList)
       } catch (err) {
-        console.log('===== error =====', err)
-        setError(err.message)
+        console.log(err)
+        setError(true)
       } finally {
         setDataLoading(false)
       }
@@ -58,7 +55,7 @@ function Freelances() {
   }, [])
 
   if (error) {
-    return <span>Oups il y a eu un problème: {error}</span>
+    return <span>Oups il y a eu un problème</span>
   }
 
   return (
@@ -87,4 +84,4 @@ function Freelances() {
   )
 }
 
-export default Freelances 
+export default Freelances

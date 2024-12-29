@@ -1,28 +1,34 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home.jsx";
-import Survey from "./pages/Survey/Survey.jsx";
-import Header from "./components/Header/Header.jsx";
-import Results from "./pages/Results/Result.jsx";
-import Freelances from "./pages/Freelances/Freelance.jsx";
-import Error from "./components/Error/Error.jsx";
-import { ThemeProvider } from "./utils/Context/index.jsx";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Survey from './pages/Survey/Survey'
+import Results from './pages/Results/Result'
+import Freelances from './pages/Freelances/Freelance'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import Error from './components/Error/Error'
+import GlobalStyle from './utils/style/GlobalStyle'
+import { ThemeProvider, SurveyProvider } from './utils/Context'
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
     <Router>
       <ThemeProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Survey/:questionNumber" element={<Survey />} />
-          <Route path="/Result" element={<Results />} />
-          <Route path="/Freelances" element={<Freelances />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
+        <SurveyProvider>
+          <GlobalStyle />
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/survey/:questionNumber" element={<Survey />} />
+            <Route path="/results" element={<Results />} />
+            <Route path="/freelances" element={<Freelances />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+          <Footer />
+        </SurveyProvider>
       </ThemeProvider>
     </Router>
-  </StrictMode>
-);
+  </React.StrictMode>
+)

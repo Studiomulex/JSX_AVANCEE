@@ -1,21 +1,31 @@
-import { createContext, useState } from "react";
-import PropTypes from "prop-types";
+import React, { useState, createContext } from 'react'
 
-const ThemeContext = createContext();
+export const ThemeContext = createContext()
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light');
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  const [theme, setTheme] = useState('light')
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
-  );
-};
+  )
+}
 
-ThemeProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+export const SurveyContext = createContext()
 
-export { ThemeContext };
+export const SurveyProvider = ({ children }) => {
+  const [answers, setAnswers] = useState({})
+  const saveAnswers = (newAnswers) => {
+    setAnswers({ ...answers, ...newAnswers })
+  }
+
+  return (
+    <SurveyContext.Provider value={{ answers, saveAnswers }}>
+      {children}
+    </SurveyContext.Provider>
+  )
+}
